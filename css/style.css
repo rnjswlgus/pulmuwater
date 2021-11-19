@@ -1,0 +1,700 @@
+@charset 'utf-8';
+@import url("font.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline-style: none;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+html {
+    font-size: 10px;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'NotoSansKR';
+    font-size: 1.6rem;
+    line-height: 1;
+    color: #333;
+}
+
+/*모달창*/
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.modal-cont {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1rem;
+    width: 45rem;
+    height: 22rem;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.modal-close {
+    content: '';
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    width: 10rem;
+    height: 3rem;
+
+    font-family: 'NotoSansKR';
+    background-color: #000;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 300;
+    border: 0;
+    text-align: center;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    color: #fff;
+    background-color: seagreen;
+}
+
+.modal-tit {
+    margin-top: 2.5rem;
+    color: #181818;
+    font-family: 'NotoSansKR';
+    font-size: 2.2rem;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.4;
+    letter-spacing: -0.8;
+}
+
+.modal-txt {
+    margin-top: 0.5rem;
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+    line-height: 1.2;
+    letter-spacing: 1;
+}
+
+/*공통클래스 영역*/
+.clearfix::after {
+    content: "";
+    position: relative;
+    display: block;
+    clear: both;
+    width: 100%;
+}
+
+.container {
+    position: relative;
+    display: block;
+    width: 117.4rem;
+    margin: 0 auto;
+}
+
+.wrap {
+    position: relative;
+    display: block;
+}
+
+/* 상단 영역 */
+.header {
+    position: relative;
+    display: block;
+    z-index: 9999;
+}
+
+.header .container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 192rem;
+    height: 7.6rem;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    margin-left: 39.8rem;
+    margin-top: 1.6rem;
+}
+
+.h-nav {
+    position: relative;
+    display: block;
+    width: 82.5rem;
+    margin-left: 59.6rem;
+    padding-top: 3.2rem;
+}
+
+.h-nav-menu {
+    position: relative;
+    display: block;
+}
+
+.h-nav-menu>li {
+    position: relative;
+    display: block;
+    float: left;
+    margin-right: 11.4rem;
+}
+
+.h-nav-menu>li>a {
+    font-size: 1.4rem;
+    color: #000;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.h-nav-menu>li>a:after {
+    content: '';
+    position: absolute;
+    top: 0.3rem;
+    left: 10rem;
+    display: block;
+    width: 0.2rem;
+    height: 1rem;
+    background-color: #aaaaab;
+}
+
+.h-nav-menu>li:last-child>a:after {
+    content: none;
+}
+
+.h-all {
+    position: absolute;
+    top: 0;
+    right: 30rem;
+    display: block;
+    width: 7.6rem;
+    height: 7.6rem;
+    background-color: #e6e6e6;
+    color: #222;
+    font-size: 1.6rem;
+    line-height: 5;
+    text-align: center;
+    margin-right: 2 9rem;
+}
+
+/* 비주얼 영역 */
+.visual {
+    position: relative;
+    display: block;
+}
+
+.visual .container {
+    width: 192rem;
+    height: 67rem;
+    background: url("../images/main_visual.png") no-repeat center;
+    background-color: #92c83e;
+}
+
+.visual-tit {
+    position: absolute;
+    top: 12.4rem;
+    left: 39.5rem;
+    display: block;
+    width: 35.4rem;
+    height: 29.9rem;
+    background: url("../images/main-visual_tit_m.png") no-repeat;
+}
+
+/* 제품소개 영역 */
+.intro {
+    position: relative;
+    display: block;
+}
+
+.intro .container {
+    position: relative;
+    display: block;
+    height: 39.4rem;
+}
+
+.intro-list {
+    position: relative;
+    display: block;
+}
+
+.intro-list>li {
+    position: relative;
+    display: block;
+    float: left;
+    width: 33.33%;
+    margin-right: -10rem;
+}
+
+.intro-box {
+    position: relative;
+    display: block;
+    height: 40rem;
+}
+
+.intro-box-link {
+    position: relative;
+    display: block;
+    height: 100%;
+}
+
+.intro-img {
+    position: absolute;
+    top: 6.2rem;
+    left: 23.3rem;
+    display: block;
+}
+
+.intro-txt {
+    position: absolute;
+    top: 16.2rem;
+    left: 20.5rem;
+    display: block;
+    font-size: 3rem;
+    font-weight: 400;
+    color: #617c05;
+    text-align: center;
+    line-height: 1.5em;
+    margin-top: 3.6rem;
+}
+
+.intro-tit {
+    position: absolute;
+    top: 20rem;
+    left: 20rem;
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: #505050;
+    text-align: center;
+    line-height: 1.7em;
+    margin-top: 6rem;
+}
+
+/* 상품 영역 */
+.goods {
+    position: relative;
+    display: block;
+}
+
+.goods .container {
+    position: relative;
+    display: block;
+    height: 48rem;
+}
+
+.goods-line {
+    position: relative;
+    display: block;
+    width: 117.2rem;
+    height: 0.1rem;
+    background-color: #d3d3d3;
+    margin-bottom: 8rem;
+}
+
+.goods-box {
+    position: relative;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin-right: 7.1rem;
+}
+
+.goods-box:last-child {
+    margin-right: 0;
+}
+
+.goods-tit {
+    font-size: 1.7rem;
+    color: #000;
+    text-align: center;
+    font-weight: ;
+    line-height: ;
+    margin-top: 1.2rem;
+    margin-bottom: 1.7rem;
+}
+
+.goods-txt {
+    font-size: 1.4rem;
+    color: #6d6d6d;
+    text-align: center;
+    font-weight: ;
+    line-height: ;
+}
+
+/* 정보 영역 */
+.infor {
+    position: relative;
+    display: block;
+}
+
+.infor .container {
+    position: relative;
+    display: block;
+    height: 39.3rem;
+    padding-left: 7.5rem;
+}
+
+.water-shape {
+    position: relative;
+    display: block;
+    text-align: center;
+    margin-bottom: 9.5rem;
+    margin-right: 7rem;
+}
+
+.infor-list {
+    position: relative;
+    display: block;
+}
+
+.infor-list>li {
+    position: relative;
+    display: block;
+    height: 17.8rem;
+    width: 17.8rem;
+    float: left;
+    margin-right: 11rem;
+    box-sizing: border-box;
+}
+
+.infor-list>li:last-child {
+    margin-right: 0;
+}
+
+.infor-list>li>a:after {
+    content: '';
+    position: absolute;
+    top: 2.2rem;
+    right: -5rem;
+    display: block;
+    width: 0.1rem;
+    height: 3.8rem;
+    background-color: #bbbdc2;
+}
+
+.infor-list>li:last-child>a:after {
+    content: none;
+}
+
+.infor-list>li>a>img {
+    position: relative;
+    display: block;
+    height: 6.8rem;
+    padding-left: 2.5rem;
+}
+
+.infor-img1 {
+    position: relative;
+    display: block;
+    margin-left: 4.2rem;
+}
+
+.infor-img2 {
+    position: relative;
+    display: block;
+    margin-left: 2.5rem;
+}
+
+.infor-tit {
+    position: relative;
+    display: block;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #000;
+    line-height: 1;
+    margin-top: 1.5rem;
+}
+
+.infor-txt {
+    position: relative;
+    display: block;
+    text-align: center;
+    font-size: 1.4rem;
+    line-height: 1.5em;
+    font-weight: 300;
+    color: #666;
+    margin-top: 1.8rem;
+}
+
+
+/* 배너 영역 */
+.banner {
+    position: relative;
+    display: block;
+}
+
+.banner .container {
+    position: relative;
+    display: block;
+    background-image: url('../images/banner_1.jpg');
+    background-repeat: no-repeat;
+    width: 240rem;
+    height: 26.5rem;
+    background-position: -25rem, 24rem;
+    background-size: cover;
+    margin-bottom: 11rem;
+}
+
+/* 문의 영역 */
+.faq {
+    position: relative;
+    display: block;
+}
+
+.faq .container {
+    position: relative;
+    display: block;
+    height: 38rem;
+}
+
+.faq-water {
+    position: relative;
+    display: block;
+    text-align: center;
+}
+
+.faq-list {
+    position: relative;
+    display: block;
+    float: left;
+    margin-top: 7.2rem;
+}
+
+.faq-box-1 {
+    position: absolute;
+    top: 0;
+    left: 25.4rem;
+    display: block;
+}
+
+.faq-box-2 {
+    position: absolute;
+    top: 0;
+    left: 83.5rem;
+    display: block;
+}
+
+.faq-txt {
+    position: relative;
+    display: block;
+    font-size: 1.8rem;
+    color: #000;
+    text-align: center;
+    line-height: ;
+    letter-spacing: ;
+    font-weight: 500;
+
+    border-top: 0.1rem solid #bababa;
+    margin-top: 1.4rem;
+    padding-top: 1.8rem;
+}
+
+
+/* 하단 영역 */
+.footer {
+    position: relative;
+    display: block;
+    border-top: 1px solid #f2f2f2;
+}
+
+.footer .container {
+    position: relative;
+    display: block;
+    margin-top: 4.6rem;
+    height: 39.5rem;
+}
+
+.f-site {
+    position: relative;
+    display: block;
+    height: 4rem;
+}
+
+.f-site-list {
+    position: relative;
+    display: block;
+    padding-left: 47.3rem;
+}
+
+.f-site-list>li {
+    float: left;
+    margin-right: 1.9rem;
+}
+
+.f-site-list>li:last-child {
+    margin-right: 0;
+}
+
+.family-site {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 26rem;
+    height: 4rem;
+    border: 0.1rem solid #000;
+    background-color: #fff;
+
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #666666;
+    text-align: left;
+    line-height: 1.944;
+    padding-left: 1.7rem;
+
+    background-image: url('../images/icon-clamp-down.png');
+    background-repeat: no-repeat;
+    background-position: 22.8rem;
+}
+
+.f-email {
+    position: relative;
+    display: block;
+    height: 1.3rem;
+}
+
+.f-email-list {
+    position: relative;
+    display: block;
+    margin-top: 3.3rem;
+    padding-left: 37.5rem;
+}
+
+.f-email-list>li {
+    float: left;
+}
+
+.f-email-list>li>a {
+    font-size: 1.4rem;
+    color: #000;
+    letter-spacing: -0.05em;
+    line-height: 1.3;
+    margin-right: 5rem;
+}
+
+.f-email-list>li>a:after {
+    content: '';
+    position: absolute;
+    top: 0.5rem;
+    right: 66.5rem;
+    display: block;
+    width: 0.1rem;
+    height: 1rem;
+    background-color: #abbbbb;
+}
+
+.f-email-line {
+    position: absolute;
+    top: 0.5rem;
+    right: 49.8rem;
+    display: block;
+    width: 0.1rem;
+    height: 1rem;
+    background-color: #abbbbb;
+}
+
+.num-list {
+    position: relative;
+    display: block;
+    margin-top: 6.4rem;
+}
+
+.num-box-1 {
+    position: absolute;
+    top: 0;
+    left: 11rem;
+    display: block;
+}
+
+.num-box-2 {
+    position: absolute;
+    top: 0;
+    right: 11rem;
+    display: block;
+}
+
+.num-line {
+    position: absolute;
+    top: 0;
+    left: 58rem;
+    display: block;
+    width: 0.1rem;
+    height: 9.4rem;
+    background-color: #cccccc;
+}
+
+.num-tit {
+    position: relative;
+    display: block;
+    font-size: 2.4rem;
+    color: #222;
+    text-align: center;
+    font-weight: ;
+    letter-spacing: ;
+    margin-bottom: 1.4rem;
+}
+
+.number {
+    font-size: 3.2rem;
+    text-align: center;
+    color: #000;
+    margin-bottom: 1.2rem;
+}
+
+.num-txt {
+    font-size: 1.8rem;
+    color: #222;
+    text-align: center;
+}
+
+.f-dress {
+    position: relative;
+    display: block;
+    height: 4rem;
+    margin-top: 21rem;
+    text-align: center;
+}
+
+.dress-txt {
+    font-size: 1.6rem;
+    color: #7b7b7b;
+    text-align: center;
+    font-weight: 300;
+    line-height: 1.5;
+    text-align: center;
+    margin-right: 1rem;
+}
